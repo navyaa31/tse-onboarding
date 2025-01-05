@@ -61,7 +61,7 @@ function parseTask(task: TaskJSON): Task {
 export interface CreateTaskRequest {
   title: string;
   description?: string;
-  assignee?: string;
+  assignee?: User;
 }
 
 /**
@@ -74,7 +74,7 @@ export interface UpdateTaskRequest {
   description?: string;
   isChecked: boolean;
   dateCreated: Date;
-  assignee?: string;
+  assignee?: User;
 }
 
 /**
