@@ -8,8 +8,6 @@ import * as TaskValidator from "src/validators/task";
 
 const router = express.Router();
 
-router.get("/:id", TaskController.getTask);
-
 /**
  * TaskValidator.createTask serves as middleware for this route. This means
  * that instead of immediately serving up the route when the request is made,
@@ -19,5 +17,7 @@ router.get("/:id", TaskController.getTask);
  */
 router.post("/", TaskValidator.createTask, TaskController.createTask);
 router.delete("/:id", TaskController.removeTask);
+router.get("/:id", TaskController.getTask);
+router.put("/:id", TaskController.updateTask);
 
 export default router;
