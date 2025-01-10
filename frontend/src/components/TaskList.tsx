@@ -13,7 +13,6 @@ export function TaskList({ title }: TaskListProps) {
   useEffect(() => {
     async function fetchTasks() {
       const result = await getAllTasks();
-      console.log(result);
       if (result.success) {
         setTasks(result.data);
       } else {
